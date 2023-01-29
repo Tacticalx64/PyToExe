@@ -19,14 +19,9 @@ class Startup():
             Startup.clear_console()
             file_directory = input("Enter file directory, or file name > ")
             Startup.clear_console()
-            onefile = input("MF Directory (Y/n) > ")
-            Startup.clear_console()
-            file_name = input("FAC Name? > ")
+            file_name = input(".exe Name? > ")
 
-            if(onefile == "y" or onefile == "Y"):
-                os.system(f'''cxfreeze {file_directory} --target-dir dist --target-name {file_name} --base console''')
-            else:
-                os.system(f'''cxfreeze {file_directory} --target-dir dist_man_dir --target-name {file_name} --include-modules os,platform,time --onefile''')
+            os.system(f'''cxfreeze {file_directory} --target-dir dist_man_dir --target-name {file_name} --include-modules os,platform,time --onefile''')
         except:
             print("Problem installing cx_freeze, try reinstalling and adding python to path!")
             time.sleep(3)
